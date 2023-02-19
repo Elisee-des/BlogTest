@@ -1,0 +1,26 @@
+{% extends 'base.admin.html.twig' %}
+
+{% block title %}Liste des articles
+{% endblock %}
+
+{% block body %}
+	<div class="page-body">
+		<div class="container">
+            <div class="content">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h4>Creer un nouvel article</h4>
+                    </div>
+                    {# <div class="col-lg-6">
+                        <a href="{{ path("admin_article_ajout") }}" class="btn btn-outline-dark btn btn-sm">Creer un article</a>
+                    </div> #}
+                </div>
+            </div>
+			<div class="card p-5">
+				{{form(form)}}
+			</div>
+		</div>
+	</div>
+
+	<div id="styleSelector"></div>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'base.admin.html.twig' %}
+
+{% block title %}Liste des articles
+{% endblock %}
+
+{% block body %}
+	<div class="page-body">
+		<div class="container">
+            <div class="content">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h4>Listes des articles</h4>
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="{{ path("admin_article_ajout") }}" class="btn btn-outline-dark btn btn-sm">Creer un article</a>
+                    </div>
+                </div>
+            </div>
+			<div class="card p-5">
+				{% for article in articles %}
+					<div class="col-lg-8">
+						<div class="card">
+							<div class="card-header">
+								<h5 class="card-header-text">Article</h5>
+							</div>
+							<div class="card-block accordion-block">
+								<div id="accordion" role="tablist" aria-multiselectable="true">
+									<div class="accordion-panel">
+										<div class="accordion-heading" role="tab" id="headingOne">
+											<h3 class="card-title accordion-title">
+												<a class="accordion-msg" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+													{{article.titre}}
+												</a>
+											</h3>
+										</div>
+										<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+											<div class="accordion-content accordion-desc">
+												<p>
+													{{article.contenu}}
+												</p>
+											</div>
+										</div>
+                                        <div class="container">
+                                        <button><span>Date de publication: {{ article.dateCreation|date("d/m/Y") }}</span></button>
+                                        </div>
+									</div>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+			</div>
+		</div>
+	</div>
+
+	<div id="styleSelector"></div>
+{% endblock %}

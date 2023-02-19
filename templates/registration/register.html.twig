@@ -1,0 +1,25 @@
+{% extends 'base.main.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+
+{% block body %}
+    <section id="about" class="about">
+		<div class="container">
+			<div class="content">
+				<div class="row">
+					<h1>Inscription</h1>
+
+					{{ form_start(registrationForm) }}
+					{{ form_row(registrationForm.email) }}
+					{{ form_row(registrationForm.plainPassword, {label: 'Password'}) }}
+					{{ form_row(registrationForm.agreeTerms) }}
+
+					<button type="submit" class="btn">Inscription</button>
+					{{ form_end(registrationForm) }}
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+

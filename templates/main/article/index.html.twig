@@ -1,0 +1,31 @@
+{% extends 'base.main.html.twig' %}
+
+{% block title %}Articles{% endblock %}
+
+{% block body %}
+
+
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Mes Articles</h2>
+        </div>
+
+        {% for article in articles %}
+            <div class="content">
+                <div class="card p-5">
+            <h4>Article</h4>
+            <h4>{{ article.titre }}</h4>
+            <h5>{{ article.contenu }}</h5>
+            <h6>{{ article.dateCreation|date("d/m/Y") }}</h6>
+        </div>
+            </div><br>
+        {% endfor %}
+
+      </div>
+    </section>
+
+
+{% endblock %}
+
